@@ -5,7 +5,7 @@ import com.springboot.demo.Error.DepartmentNotFoundException;
 
 import java.util.List;
 
-public interface DepartmenService
+public interface DepartmentService
 {
     public Department saveDepartment(Department department);
 

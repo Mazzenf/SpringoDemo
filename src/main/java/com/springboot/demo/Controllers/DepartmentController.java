@@ -3,9 +3,7 @@ package com.springboot.demo.Controllers;
 
 import com.springboot.demo.Entities.Department;
 import com.springboot.demo.Error.DepartmentNotFoundException;
-import com.springboot.demo.Repositories.DepartmentRepository;
-import com.springboot.demo.Services.DepartmenService;
-import com.springboot.demo.Services.DepartmentServiceImp;
+import com.springboot.demo.Services.DepartmentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +18,7 @@ public class DepartmentController
 
 
     @Autowired
-    private DepartmenService departmenService;
+    private DepartmentService departmenService;
     private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
 
     @PostMapping("/departments")
