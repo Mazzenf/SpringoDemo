@@ -18,14 +18,14 @@ public class DepartmentController
 
 
     @Autowired
-    private DepartmentService departmenService;
+    private DepartmentService departmentService;
     private final Logger LOGGER = LoggerFactory.getLogger(DepartmentController.class);
 
     @PostMapping("/departments")
     public Department saveDepartment(@Valid  @RequestBody Department department) //@RequestBody means data we are getting in the request body (JSON) AND convert that json data to m department object
     {
         LOGGER.info("inside saveDepartment of DepartmentController");
-        return departmenService.saveDepartment(department);
+        return departmentService.saveDepartment(department);
     }
 
 
@@ -34,19 +34,19 @@ public class DepartmentController
     public List<Department> fetchDeprtmentList()
     {
         LOGGER.info("inside fetchDepartmentList of DepartmentController");
-        return departmenService.fetchDepartmentList();
+        return departmentService.fetchDepartmentList();
     }
 
     @GetMapping("/departments/{id}")
     public Department fetchDepartmentById(@PathVariable("id") Long departmentID) throws DepartmentNotFoundException
     {
-        return departmenService.fetchDepartmentById(departmentID);
+        return departmentService.fetchDepartmentById(departmentID);
     }
 
     @DeleteMapping("/departments/{id}")
     public String deleteDepartmentById(@PathVariable("id") Long departmentID)
     {
-        departmenService.deleteDepartmentById(departmentID);
+        departmentService.deleteDepartmentById(departmentID);
 
         return "Department deleted successfully.";
 
@@ -55,14 +55,14 @@ public class DepartmentController
     @PutMapping("/departments/{id}")
     public Department updateDepartmentById(@PathVariable("id") Long departmentID, @RequestBody Department department)
     {
-        return departmenService.updateDepartmentById(departmentID,department);
+        return departmentService.updateDepartmentById(departmentID,department);
     }
 
 
     @GetMapping("departments/name/{name}")
     public Department fetchDepartmentByName(@PathVariable("name") String departmentName)
     {
-        return departmenService.fetchDepartmentByName(departmentName);
+        return departmentService.fetchDepartmentByName(departmentName);
     }
 
 }
