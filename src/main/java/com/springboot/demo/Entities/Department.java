@@ -20,7 +20,7 @@ public class Department
 {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
-    Long departmentID;
+    Long departmentId;
 
 
 //    @Length(max = 15, min = 2)

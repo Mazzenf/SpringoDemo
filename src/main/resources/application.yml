@@ -1,0 +1,69 @@
+spring:
+  profiles:
+    active: qa
+---
+
+spring:
+  profiles: dev
+  datasource:
+    password: maz3n123
+    url: jdbc:mysql://localhost:3306/TEST1
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+welcome:
+  message: Welcome to daily code buffer!!
+
+---
+spring:
+  profiles: qa
+  datasource:
+    password: maz3n123
+    url: jdbc:mysql://localhost:3306/TEST1-qa
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+welcome:
+  message: Welcome to daily code buffer!!
+
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env, beans"
+
+
+---
+
+spring:
+  profiles: prod
+  datasource:
+    password: maz3n123
+    url: jdbc:mysql://localhost:3306/TEST1-prod
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    show-sql: true
+welcome:
+  message: Welcome to daily code buffer!!
